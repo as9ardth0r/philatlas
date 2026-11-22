@@ -1,4 +1,5 @@
 # Philatlas — l'atlas mondial de la philatélie
+**[▶ Explorer le globe](https://philatlas.broutinjoelalain.workers.dev)**
 
 > Découvrir les lieux du timbre à travers un globe interactif 3D : boutiques, maisons de vente, musées, experts, salons, ateliers de restauration et d'impression.
 
