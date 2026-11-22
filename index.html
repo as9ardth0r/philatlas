@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Philatlas — l'atlas mondial de la philatélie</title>
+  <meta name="description" content="Musées, maisons de vente, boutiques, experts, salons et ateliers : tous les lieux du timbre sur un globe interactif.">
+  <meta property="og:title" content="Philatlas — l'atlas mondial de la philatélie">
+  <meta property="og:description" content="Découvrez les lieux du timbre à travers le monde sur un globe 3D.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="globe" aria-label="Globe interactif des lieux philatéliques"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#" id="home" title="Revenir au globe">
+      <span class="stamp-logo" aria-hidden="true">
+        <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="11" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 20h22M20 9c-4 4-4 18 0 22M20 9c4 4 4 18 0 22" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+      </span>
+      <span><strong>Philatlas</strong><em>l'atlas mondial du timbre</em></span>
+    </a>
+    <div class="search" role="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+      <input id="q" type="search" placeholder="Ville, pays, musée, maison de vente…" autocomplete="off" aria-label="Rechercher un lieu" aria-controls="results" aria-expanded="false">
+      <ul id="results" class="results" role="listbox"></ul>
+    </div>
+  </header>
+
+  <nav class="filters" id="filters" aria-label="Catégories"></nav>
+
+  <aside class="agenda" id="agenda" aria-label="À l'affiche">
+    <button class="agenda-toggle" id="agenda-toggle" aria-expanded="true"><span>À l'affiche</span><b id="agenda-count"></b></button>
+    <div class="agenda-body">
+      <ul id="agenda-list"></ul>
+      <div id="featured"></div>
+    </div>
+  </aside>
+
+  <aside class="sheet" id="sheet" aria-live="polite" hidden></aside>
+
+  <div class="corner">
+    <button class="pill" id="propose">+ Proposer un lieu</button>
+    <p class="zoom-hint" id="hint">Zoomez pour faire apparaître les lieux · cliquez sur un point pour sa fiche</p>
+  </div>
+
+  <dialog id="propose-dialog" class="dialog">
+    <form method="dialog" id="propose-form">
+      <h2>Référencer un lieu</h2>
+      <p class="muted">Boutique, maison de vente, musée, expert, salon ou atelier : le référencement de base est gratuit. Une mise en avant « Partenaire » est proposée aux professionnels.</p>
+      <label>Nom de l'établissement<input name="name" required></label>
+      <label>Catégorie<select name="category" id="propose-cat"></select></label>
+      <label>Ville et pays<input name="city" required></label>
+      <label>Site web ou e-mail<input name="contact"></label>
+      <div class="dialog-actions">
+        <button value="cancel" formnovalidate class="pill ghost">Annuler</button>
+        <button value="send" class="pill">Envoyer la proposition</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

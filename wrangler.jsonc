@@ -1,0 +1,7 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "philatlas",
+  "compatibility_date": "2026-11-01",
+  // Site 100 % statique : Cloudflare sert le dossier dist/ (gratuit, CDN mondial)
+  "assets": { "directory": "./dist", "not_found_handling": "single-page-application" }
+}
